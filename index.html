@@ -528,3 +528,44 @@
    </body>
 </html>
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio de Sesión</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="login-page">
+    <div class="login-container" id="login-container">
+      <!-- Sección de inicio de sesión -->
+      <div id="login-form">
+        <h2>Iniciar Sesión</h2>
+        <form action="#">
+          <input type="email" name="email" placeholder="Correo electrónico" required>
+          <input type="password" name="password" placeholder="Contraseña" required>
+          <button type="submit">Entrar</button>
+        </form>
+        <a href="#" class="toggle-link" onclick="toggleForms(event)">¿No tienes cuenta? Regístrate aquí</a>
+      </div>
+
+      <!-- Sección de registro de usuario -->
+      <div id="register-form" style="display: none;">
+        <h2>Registro de Usuario</h2>
+        <form action="#">
+          <input type="text" name="username" placeholder="Nombre de usuario" required>
+          <input type="email" name="email" placeholder="Correo electrónico" required>
+          <input type="password" name="password" placeholder="Contraseña" required>
+          <button type="submit">Registrarse</button>
+        </form>
+        <a href="#" class="toggle-link" onclick="toggleForms(event)">¿Ya tienes cuenta? Inicia sesión aquí</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
