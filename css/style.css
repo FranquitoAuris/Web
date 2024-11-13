@@ -1084,4 +1084,89 @@ button {
      margin-top: 30px;
      font-family: 'Verdana', sans-serif;
    }
+
+
+   /* Estilos generales */
+.login-page {
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     background: #ffffff; /* Fondo blanco */
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     height: 100vh;
+     margin: 0;
+     color: #000;
+   }
+   
+   /* Estilos del formulario */
+   .login-page .login-container {
+     background: #ffffff;
+     padding: 2rem;
+     border-radius: 12px;
+     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+     width: 100%;
+     max-width: 400px;
+     text-align: center;
+   }
+   
+   .login-page .login-container h2 {
+     color: #333;
+     margin-bottom: 1.5rem;
+     font-weight: 600;
+   }
+   
+   .login-page .login-container input[type="email"],
+   .login-page .login-container input[type="password"],
+   .login-page .login-container input[type="text"] {
+     width: 100%;
+     padding: 12px;
+     margin: 10px 0;
+     border: 1px solid #a7d8f5;
+     border-radius: 8px;
+     background: #f0f8ff;
+     color: #333;
+     font-size: 16px;
+     box-sizing: border-box;
+     transition: background 0.3s ease;
+   }
+   
+   .login-page .login-container input[type="email"]:focus,
+   .login-page .login-container input[type="password"]:focus,
+   .login-page .login-container input[type="text"]:focus {
+     background: #e6f7ff;
+     outline: none;
+   }
+   
+   .login-page .login-container button {
+     width: 100%;
+     padding: 12px;
+     background: #a7d8f5; /* Botón celeste */
+     color: #000; /* Texto negro */
+     border: none;
+     border-radius: 8px;
+     cursor: pointer;
+     font-size: 18px;
+     font-weight: bold;
+     margin-top: 1rem;
+     transition: transform 0.2s ease, box-shadow 0.2s ease;
+   }
+   
+   .login-page .login-container button:hover {
+     transform: scale(1.05);
+     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+   }
+   
+   .login-page .login-container .toggle-link {
+     display: block;
+     margin-top: 15px;
+     color: #007bb5;
+     text-decoration: none;
+     font-size: 15px;
+     font-weight: 500;
+     transition: color 0.3s;
+   }
+   
+   .login-page .login-container .toggle-link:hover {
+     color: #005a86;
+   }
    
