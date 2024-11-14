@@ -109,7 +109,7 @@
                         <div class="text-bg">
                            <h1> <span class="blu">Welcome <br></span>TO FRANQUITOAURIS</h1>
                            <figure><img src="images/banner_img.png" alt="#"/></figure>
-                           <a class="read_more" href="#">Comprar ahora</a>
+                           
                         </div>
                      </div>
                   </div>
@@ -120,7 +120,7 @@
                         <div class="text-bg">
                            <h1> <span class="blu">Welcome <br></span>TO FRANQUITOAURIS</h1>
                            <figure><img src="images/banner_img2.webp" alt="#"/></figure>
-                           <a class="read_more" href="#">Comprar ahora</a>
+                           
                         </div>
                      </div>
                   </div>
@@ -131,7 +131,7 @@
                         <div class="text-bg">
                            <h1> <span class="blu">Welcome <br></span>TO FRANQUITOAURIS</h1>
                            <figure><img src="images/banner_img3.png" alt="#"/></figure>
-                           <a class="read_more" href="#">Comprar ahora</a>
+                           
                         </div>
                      </div>
                   </div>
@@ -160,7 +160,7 @@
                      <h2>Sobre nosotros</h2>
                      <p>"No hay mejores precios para tus oídos." FRANQUITOAURIS te ofrece el mejor servicio y marcas de auriculares de alta calidad.</p>
                   </div>
-                  <a class="read_more" href="#">Leer mas</a>
+               
                </div>
             </div>
          </div>
@@ -267,7 +267,7 @@
                  
                </div>
                <div class="col-md-12">
-                  <a class="read_more" href="#">Leer mas</a>
+                  
                </div>
             </div>
          </div>
@@ -287,7 +287,7 @@
                      <div class="titlepage">
                         <h2>Auriculares tematicos, del rayo MQuenn</h2>
                         <p>Excelentes auriculares disney cars, diseñados para el oído de los niños y niñas sin afectar ni lastimar sus timpanos. Sonido adaptable y faciles de usar.</p>
-                        <a class="read_more" href="#">Comprar ahora</a>
+                        
                      </div>
                   </div>
                </div>
@@ -531,41 +531,31 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inicio de Sesión</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulación de Registro e Inicio de Sesión</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-
-  <div class="login-page">
-    <div class="login-container" id="login-container">
-      <!-- Sección de inicio de sesión -->
-      <div id="login-form">
-        <h2>Iniciar Sesión</h2>
-        <form action="#">
-          <input type="email" name="email" placeholder="Correo electrónico" required>
-          <input type="password" name="password" placeholder="Contraseña" required>
-          <button type="submit">Entrar</button>
-        </form>
-        <a href="#" class="toggle-link" onclick="toggleForms(event)">¿No tienes cuenta? Regístrate aquí</a>
-      </div>
-
-      <!-- Sección de registro de usuario -->
-      <div id="register-form" style="display: none;">
-        <h2>Registro de Usuario</h2>
-        <form action="#">
-          <input type="text" name="username" placeholder="Nombre de usuario" required>
-          <input type="email" name="email" placeholder="Correo electrónico" required>
-          <input type="password" name="password" placeholder="Contraseña" required>
-          <button type="submit">Registrarse</button>
-        </form>
-        <a href="#" class="toggle-link" onclick="toggleForms(event)">¿Ya tienes cuenta? Inicia sesión aquí</a>
-      </div>
+<body class="auth-body">
+    <div id="auth-form-container">
+        <h2 id="auth-form-title">Registro</h2>
+        
+        <!-- Campos del formulario -->
+        <input type="text" id="auth-username" placeholder="Nombre de usuario">
+        <input type="password" id="auth-password" placeholder="Contraseña">
+        
+        <!-- Botones de acción -->
+        <button onclick="register()" class="auth-button" id="auth-register-button">Registrarse</button>
+        <button onclick="login()" class="auth-button" id="auth-login-button" style="display: none;">Iniciar Sesión</button>
+        
+        <!-- Botón para alternar entre registro e inicio de sesión -->
+        <button onclick="toggleForm()" class="auth-toggle-button">¿Ya tienes una cuenta? Inicia Sesión</button>
+        
+        <!-- Mensaje de estado -->
+        <p id="auth-message"></p>
     </div>
-  </div>
 
-  <script src="script.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>
+

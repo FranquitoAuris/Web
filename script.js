@@ -66,22 +66,96 @@ document.getElementById('contactForm').addEventListener('submit', function(event
   });
   
 
+// Función para registrar al usuario
+function register() {
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
 
-
-
-
-  function toggleForms(event) {
-    event.preventDefault(); // Esto evitará que la página se desplace
-  
-    const loginForm = document.getElementById('login-form');
-    const registerForm = document.getElementById('register-form');
-  
-    if (loginForm.style.display === 'none') {
-      loginForm.style.display = 'block';
-      registerForm.style.display = 'none';
+    if (username && password) {
+        // Guardar usuario y contraseña en localStorage
+        localStorage.setItem("username", username);
+        localStorage.setItem("password", password);
+        document.getElementById("message").innerText = "Registro exitoso. Ahora puedes iniciar sesión.";
     } else {
-      loginForm.style.display = 'none';
-      registerForm.style.display = 'block';
+        document.getElementById("message").innerText = "Por favor, completa todos los campos.";
     }
-  }
-  
+}
+
+// Función para iniciar sesión del usuario
+function login() {
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+
+    const storedUsername = localStorage.getItem("username");
+    const storedPassword = localStorage.getItem("password");
+
+    if (username === storedUsername && password === storedPassword) {
+        document.getElementById("message").innerText = "Inicio de sesión exitoso. Bienvenido " + username + "!";
+        document.getElementById("logoutButton").style.display = "inline-block";
+        document.getElementById("form-title").innerText = "Bienvenido, " + username;
+    } else {
+        document.getElementById("message").innerText = "Nombre de usuario o contraseña incorrectos.";
+    }
+}
+
+// Función para cerrar sesión del usuario
+function logout() {
+    document.getElementById("message").innerText = "Has cerrado sesión.";
+    document.getElementById("form-title").innerText = "Registro";
+    document.getElementById("logoutButton").style.display = "none";
+}
+
+let isRegistering = true;
+
+// Alterna entre el formulario de registro y de inicio de sesión
+function toggleForm() {
+    isRegistering = !isRegistering;
+
+    const title = document.getElementById("auth-form-title");
+    const registerButton = document.getElementById("auth-register-button");
+    const loginButton = document.getElementById("auth-login-button");
+    const toggleButton = document.querySelector(".auth-toggle-button");
+
+    if (isRegistering) {
+        // Modo Registro
+        title.innerText = "Registro";
+        registerButton.style.display = "inline-block";
+        loginButton.style.display = "none";
+        toggleButton.innerText = "¿Ya tienes una cuenta? Inicia Sesión";
+    } else {
+        // Modo Inicio de Sesión
+        title.innerText = "Inicio de Sesión";
+        registerButton.style.display = "none";
+        loginButton.style.display = "inline-block";
+        toggleButton.innerText = "¿No tienes cuenta? Regístrate";
+    }
+}
+
+// Función para registrar al usuario (simulado)
+function register() {
+    const username = document.getElementById("auth-username").value;
+    const password = document.getElementById("auth-password").value;
+
+    if (username && password) {
+        localStorage.setItem("username", username);
+        localStorage.setItem("password", password);
+        document.getElementById("auth-message").innerText = "Registro exitoso. Ahora puedes iniciar sesión.";
+    } else {
+        document.getElementById("auth-message").innerText = "Por favor, completa todos los campos.";
+    }
+}
+
+// Función para iniciar sesión del usuario (simulado)
+function login() {
+    const username = document.getElementById("auth-username").value;
+    const password = document.getElementById("auth-password").value;
+
+    const storedUsername = localStorage.getItem("username");
+    const storedPassword = localStorage.getItem("password");
+
+    if (username === storedUsername && password === storedPassword) {
+        document.getElementById("auth-message").innerText = "Inicio de sesión exitoso. Bienvenido " + username + "!";
+    } else {
+        document.getElementById("auth-message").innerText = "Nombre de usuario o contraseña incorrectos.";
+    }
+}
